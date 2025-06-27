@@ -35,27 +35,33 @@ puts("Введите номер вертикали поля (для сравне
 puts("Введите номер горизонтали поля (для сравнения): "); scanf("%d", &field_g);
 
 // проводим проверку на корректные поля ввода ячейки для сравнения
-if (field_v < 1 || field_v > 8 
-&& field_g < 1 || field_g > 8){
+if (field_v < 1 || field_v > 8 && 
+    field_g < 1 || field_g > 8){
  puts("Поле для сравнения не существует");
  exit; 
 
 // проводим проверку на корректные поля ввода ячейки
 // если ячейка находится вне пределов клеточного поля, то завершаем программу
-} else if (vertical < 1 || vertical > 8 
-&& diagonal < 1 || vertical > 8){
+} else if (vertical < 1 || vertical > 8 && 
+          diagonal < 1 || vertical > 8){
  puts("Выбранное поле не существует");
  exit;
 
  // если поля одного цвета и они чёрные, то выводим сообщение в консоль
-} else if (vertical % 2 == 0 && diagonal % 2 != 0
-&& field_v % 2 == 0 && field_g % 2 != 0){
+} else if (
+    ((vertical % 2 != 0 && diagonal % 2 != 0) || 
+    (vertical % 2 == 0 && diagonal % 2 == 0)) && 
+    ((field_v % 2 != 0 && field_g % 2 != 0) ||
+    (field_v % 2 == 0 && field_v % 2 == 0))){
  puts("Выбранные поля чёрного цвета");
 exit;
 
  // если поля одного цвета и они белые, то выводим сообщение в консоль
-} else if (vertical % 2 != 0 && diagonal % 2 == 0
-&& field_v % 2 != 0 && field_g % 2 == 0) {
+} else if 
+   (((vertical % 2 != 0 && diagonal % 2 == 0) || 
+    (vertical % 2 == 0 && diagonal % 2 != 0)) && 
+    ((field_v % 2 == 0 && field_g % 2 != 0) ||
+    (field_v % 2 == 0 && field_v % 2 != 0))){
  puts("Выбранные поля белого цвета");
 
  // если поля не совпадают то..
