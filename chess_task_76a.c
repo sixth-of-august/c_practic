@@ -61,7 +61,7 @@ exit;
    (((vertical % 2 != 0 && diagonal % 2 == 0) || 
     (vertical % 2 == 0 && diagonal % 2 != 0)) && 
     ((field_v % 2 == 0 && field_g % 2 != 0) ||
-    (field_v % 2 == 0 && field_v % 2 != 0))){
+    (field_v % 2 != 0 && field_v % 2 == 0))){
  puts("Выбранные поля белого цвета");
 
  // если поля не совпадают то..
