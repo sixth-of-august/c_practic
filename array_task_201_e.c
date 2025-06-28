@@ -93,4 +93,4 @@ return 0;
   gcc -o array_task array_task_201_e.c
   
   запускаем исполняемый файл
-  ./array_task                     */
+  ./array_task                     */ 

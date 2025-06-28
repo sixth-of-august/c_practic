@@ -56,4 +56,4 @@ int main() {
   gcc -o max_sum max_sum_devide_task_322.c
   
   запускаем исполняемый файл
-  ./max_sum                   */
+  ./max_sum                   */ 

@@ -54,4 +54,4 @@ int main () {
   gcc -o calculate_task calculate_task_11e.c
   
   запускаем исполняемый файл
-  ./calculate_task                        */
+  ./calculate_task                        */ 

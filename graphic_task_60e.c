@@ -65,4 +65,4 @@ int main () {
   gcc -o graphic_task graphic_task_60e.c
   
   запускаем исполняемый файл
-  ./graphic_task                        */
+  ./graphic_task                        */ 

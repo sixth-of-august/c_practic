@@ -77,4 +77,4 @@ exit;
   gcc -o chess_task chess_task_76a.c
   
   запускаем исполняемый файл
-  ./chess_task                        */
+  ./chess_task                        */ 
