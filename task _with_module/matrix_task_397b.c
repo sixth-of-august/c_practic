@@ -8,9 +8,13 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
+# include <locale.h>
 # include "matrix.h"
 
 int  main(){
+
+// устанавливаем локаль для корректного отображения русских символов
+setlocale(LC_ALL, "");
 
 // создаём константу для хранения размера матрицы
 const int N = 10; 

@@ -7,7 +7,6 @@
 // заголовочный файл
 # include "matrix.h"
 
-
 /**
 * @brief функция инициализации матрицы
 * @param rows: количество строк
@@ -60,6 +59,61 @@ void print_matr(float **matr, size_t rows, size_t cols){
     } printf("\n");
 }
 
+/**
+* @brief функция вычитания матриц
+* @param matr_1: первая матрица
+* @param matr_2: вторая матрица
+* @param rows: количество строк
+* @return сумма матриц
+*/
+float** matr_minus(float **matr_1, float **matr_2, size_t rows){
+    
+    // создаём указатель на матрицу
+    float **matr_minus = NULL;
+    
+    // инициализируем матрицу
+    matr_minus = init_matr(rows, rows);
+
+    // суммируем матрицы
+    for (int i = 0; i < rows; i++){
+        for (int j = 0; j < rows; j++){
+          matr_minus[i][j] =  matr_1[i][j] - matr_2[i][j];
+        }
+
+    // возвращаем результат и очищаем память
+    } return matr_minus; matr_free(matr_minus, rows);
+}
+
+/**
+* @brief функция умножения матриц
+* @param matr_1: первая матрица
+* @param matr_2: вторая матрица
+* @param rows: количество строк
+* @return: результат умножения
+*/
+float** matr_multiply(float **matr_1, float **matr_2, size_t rows){
+    
+    // создаём указатель на матрицу
+    float **matr_mult = NULL;
+    
+    // инициализируем матрицу
+    matr_mult = init_matr(rows, rows);
+
+    // перемножаем матрицы
+    for (int i = 0; i < rows; i++){
+        for (int j = 0; j < rows; j++){
+
+            // инициализируем первый элемент
+            matr_mult[i][j] = 0;
+            for (int k = 0; k < rows; k++){
+
+                // умножаем строку на каждый элемент столбца и суммируем их
+             matr_mult[i][j] += matr_1[i][k] * matr_2[k][j]; 
+            }
+        } // возвращаем результат и очищаем память
+    } return matr_mult; matr_free(matr_mult, rows);
+}
+    
 /**
 * @brief функция очистки памяти, занятой динамической матрицей
 * @param matr: вещественная матрица

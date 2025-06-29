@@ -35,6 +35,24 @@ void matrix_random(float **matr, size_t rows, size_t cols);
 void print_matr(float **matr, size_t rows, size_t cols);
 
 /**
+* @brief функция вычитания матриц
+* @param matr_1: первая матрица
+* @param matr_2: вторая матрица
+* @param rows: количество строк
+* @return сумма матриц
+*/
+float** matr_minus(float **matr_1, float **matr_2, size_t rows);
+
+/**
+* @brief функция умножения матриц
+* @param matr_1: первая матрица
+* @param matr_2: вторая матрица
+* @param rows: количество строк
+* @return: результат умножения
+*/
+float** matr_multiply(float **matr_1, float **matr_2, size_t rows);
+
+/**
 * @brief функция очистки памяти, занятой динамической матрицей
 * @param matr: вещественная матрица
 * @param rows: количество строк
