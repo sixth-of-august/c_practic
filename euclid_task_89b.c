@@ -85,4 +85,4 @@ return 0;
   gcc -o euclid_task euclid_task_89b.c
   
   запускаем исполняемый файл
-  ./euclid_task                      */ 
+  ./euclid_task  */

@@ -21,12 +21,12 @@ int main() {
     int length = 10000, max_sum = 0, number_max_sum = 0;
     
     // создаём массивы с фиксированной длиной
-    int new_array[length], sum_array[length];
+    int arr[length], sum_array[length];
 
     // заполняем массив натуральных чисел
     // (переменная счётчика; условие работы цикла; увелечение переменной)
     for (int i = 0; i < length; i++) {
-        new_array[i] = i + 1; 
+        arr[i] = i + 1; 
     }
 
    // ищём сумму делителей для каждого натурального числа
@@ -35,10 +35,10 @@ int main() {
 
         // цикл ищет делители вплоть для самого числа
         // (переменная счётчика; условие работы цикла; увелечение переменной)
-        for (int j = 1; j <= new_array[i]; j++) {
+        for (int j = 1; j <= arr[i]; j++) {
            
             // условие (деление на число без остатка)
-            if (new_array[i] % j == 0) {
+            if (arr[i] % j == 0) {
                 sum_array[i] += j;
             } } }
     
@@ -48,7 +48,7 @@ int main() {
     for (int i = 0; i < length; i++) {
         if (sum_array[i] > max_sum) {
             max_sum = sum_array[i];
-            number_max_sum = new_array[i];
+            number_max_sum = arr[i];
         } }
 
     // выводим полученные результаты
