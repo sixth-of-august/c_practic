@@ -26,7 +26,7 @@ float *max = malloc(N * sizeof(float));
 // заполняем массив случайными значениями
 for (int i = 0; i < N; i++){
     for (int j = 0; j < N; j++){
-        matrix[i][j] = (rand() / 100.5 ) * powf(-1, j);
+        matrix[i][j] = (rand() % 10 ) * powf(-1, j);
     }
 }
 
