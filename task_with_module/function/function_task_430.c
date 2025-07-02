@@ -22,7 +22,7 @@ unsigned int k = 0, l = 0, m = 0;
 float t = 0;
 
 // динамические массивы
-int *x_arr = NULL, *y_arr = NULL, *z_arr = NULL;
+float *x_arr = NULL, *y_arr = NULL, *z_arr = NULL;
 
 // запрос длины массива x и выделение памяти для него
 puts("Введите длину массива x: "); scanf("%d", &k);

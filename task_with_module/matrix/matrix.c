@@ -7,6 +7,17 @@
 // заголовочный файл
 # include "matrix.h"
 
+// обьявляем структуру
+struct RowsCols{
+// поля структуры
+short rows;
+
+// столбец
+short cols; };
+
+// даём структуре имя, чтобы обращаться к нему
+typedef struct RowsCols RowsCols;
+
 /**
 * @brief функция инициализации матрицы
 * @param rows: количество строк
@@ -110,8 +121,59 @@ float** matr_multiply(float **matr_1, float **matr_2, size_t rows){
             }
         } // возвращаем результат и очищаем память
     } return matr_mult; matr_free(matr_mult, rows);
-}
+} 
+
+/**
+* @brief функция поиска адресса ячейки с мин.значением
+* @param matrix: первая матрица
+* @param rows: строки
+* @param cows: столбец
+* @return: результат поиска
+*/
+RowsCols min_matrix_RC(float** matrix, int  rows, int cols){
+
+// инициализируем локальную переменную
+float min_value = 0;
+RowsCols rows_cols;
+        min_value = matrix[0][0];
+
+        // проходимся циклом по элементам матрицы
+      for (int i = 0; i < rows; i++){  
+        for (int j = 1; j < cols; j++){
+            if (min_value > matrix[i][j]){
+
+                // заменяем минимальное значение 
+                // записываем ячейку
+                min_value = matrix[i][j];
+                rows_cols.rows = i;
+                rows_cols.cols = j;
+            }    }    }     
+        return rows_cols;
+        };
+
+/**
+* @brief функция перестановки значений
+* @param matrix: матрица со значениями
+* @param rows_1: строка с ячейкой для замены
+* @param rows_1: строка куда заменить
+* @param cols_1: столбец с ячейкой для замены
+* @param cols_2: столбец куда заменить
+* @return: результат поиска
+*/
+float** element_change(float** matrix, int  rows_1, int cols_1, int rows_2, int cols_2){
     
+    float* temp; *temp = 0.0;
+
+    // переставляем переменные
+    *temp = matrix[rows_1][cols_1];
+    matrix[rows_1][cols_1] = matrix[rows_2][cols_2];
+    matrix[rows_2][cols_2] = *temp;
+
+    free(temp); temp = NULL;
+
+    return matrix;
+    }
+
 /**
 * @brief функция очистки памяти, занятой динамической матрицей
 * @param matr: вещественная матрица

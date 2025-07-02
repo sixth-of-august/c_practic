@@ -12,7 +12,7 @@
 * @param length: длина массива
 * @return: максимальное значение в массиве
 */
-int max_in_arr(int *arr, int length){
+int max_in_arr(float *arr, int length){
     int max = arr[0];
     for(int i = 1; i < length; i++){
         if (arr[i] > max){
@@ -26,7 +26,7 @@ int max_in_arr(int *arr, int length){
 * @param arr: динамический массив
 * @param length: длина массива
 */
-void scan_arr(int *arr, int length){
+void scan_arr(float *arr, int length){
    for(int i = 0; i < length; i++){
     printf("Введите элемент[%d]: ", i + 1);
     scanf("%d", &arr[i]);
@@ -38,7 +38,7 @@ void scan_arr(int *arr, int length){
 * @param arr: динамический массив
 * @param length: длина массива
 */
-void print_arr(int *arr, int length){
+void print_arr(float *arr, int length){
    for(int i = 0; i < length; i++){
     printf("%d ", arr[i]);
    } printf("\n"); 

@@ -15,18 +15,18 @@
 * @param length: длина массива
 * @return: максимальное значение в массиве
 */
-int max_in_arr(int *arr, int length);
+int max_in_arr(float *arr, int length);
 
 /**
 * @brief процедура ввода элементов массива
 * @param arr: динамический массив
 * @param length: длина массива
 */
-void scan_arr(int *arr, int length);
+void scan_arr(float *arr, int length);
 
 /**
 * @brief процедура вывода элементов массива
 * @param arr: динамический массив
 * @param length: длина массива
 */
-void print_arr(int *arr, int length);
+void print_arr(float *arr, int length);

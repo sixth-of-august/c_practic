@@ -53,7 +53,7 @@ int main(){
     matr_free(matr_b, n); 
     matr_free(matr_c, n); 
 
-    // помечаеи указатели как свободные
+    // помечаем указатели как свободные
     matr_a = NULL; 
     matr_b = NULL;
     matr_c = NULL;
