@@ -27,7 +27,7 @@ typedef struct student student;
 
 /**
  * @brief функция для заполнения переменной
- * @param open_file: файловая переменная
+ * @param: файл для открытия
  * @param file_name: имя файла
  * @return заполненная переменная
  */
@@ -94,15 +94,17 @@ while(feof(first_open) == 0){
 
 /**
  * @brief функция поиска максимального вещественного значения в файле
- * @param open_file: файловая переменная
  * @param file_name: имя файла
  * @return: максимальное вещественное число
  */
-float max_in_file(FILE *open_file, char file_name[]){
+float max_in_file(char file_name[]){
 
 // инциализируем переменную, которая будет хранить мак.знач
 // и временную переменную 
 float max = 0.0, temp = 0.0;
+
+// инициализируем файловую переменную
+FILE* open_file;
 
 // открываем файл по имени в режиме для чтения
 open_file = fopen(file_name, "r");
@@ -125,11 +127,13 @@ while (feof(open_file) == 0){
 
 /**
  * @brief функция для записи значений в файл
- * @param open_file: файловая переменная
  * @param file_name: имя файла
  * @param n: количество чисел
  */
-void f_write_real(FILE *rewrite_file, char file_name[], int n){
+void f_write_real(char file_name[], int n){
+
+// обьявляем фаловую переменную
+FILE *rewrite_file;
 
 // рандомайзер
 srand(time(NULL));

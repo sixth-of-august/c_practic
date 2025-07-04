@@ -17,9 +17,6 @@
 
 int main(){
 
-// задаём файловый тип
-FILE *real_file;
-
 // оъявляем имя файловой переменной
 char file_name[] = "real_value.txt";
 
@@ -27,10 +24,10 @@ char file_name[] = "real_value.txt";
 setlocale(LC_ALL, "");
 
 // заполняем файл вещественными значениями
-f_write_real(real_file, file_name, 10);
+f_write_real(file_name, 10);
 
 // выводим максимальное значение вещественного числа 
-printf(" Максимальное вещественное число = %.3f", max_in_file(real_file, file_name));
+printf(" Максимальное вещественное число = %.3f", max_in_file(file_name));
 
 return 0;
 }

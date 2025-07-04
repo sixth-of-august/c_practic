@@ -20,9 +20,6 @@
 
 int main(){
 
-// задаём файловый тип
-FILE *student_file;
-
 // оъявляем имя файловой переменной
 char file_name[] = "student_base.txt";
 
