@@ -63,10 +63,13 @@ int main(){
     printf("Минимальное число находилось в ячейке[%hd][%hd]\n", RowsCols1.rows + 1, RowsCols1.cols + 1);
 
     // меняем ячейки местами
-    matrix = element_change(matrix, RowsCols1.rows, RowsCols1.cols, length - 1, length - 1);
+    // matrix = element_change(matrix, RowsCols1.rows, RowsCols1.cols, length - 1, length - 1);
 
     // выводим матрицу с перестановкой
     puts("Матрица после перестановки: ");
+    row_change(matrix, length, RowsCols1.rows, length - 1);
+    cols_change(matrix, length, RowsCols1.cols, length - 1);
+
     print_matr(matrix, length, length);
 
     // очищаем память динамической матрицы
@@ -75,3 +78,12 @@ int main(){
     // делаем указатель пустым
     matrix = NULL;
 }
+
+/* Действия в компиляторе 
+
+связываем код программы и модуль в приложение
+ gcc matrix.c function_task_683_b.c -o function_task_2
+
+запускаем приложение
+ .\function_task_2
+ */

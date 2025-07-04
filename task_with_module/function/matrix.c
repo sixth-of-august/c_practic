@@ -3,6 +3,7 @@
 // включённые модули программы
 # include <stdio.h>
 # include <stdlib.h>
+# include "factorial.h"
 
 // заголовочный файл
 # include "matrix.h"
@@ -152,27 +153,41 @@ struct RowsCols rows_cols;
         };
 
 /**
-* @brief функция перестановки значений
-* @param matrix: матрица со значениями
-* @param rows_1: строка с ячейкой для замены
-* @param rows_1: строка куда заменить
-* @param cols_1: столбец с ячейкой для замены
-* @param cols_2: столбец куда заменить
+* @brief функция перестановки строк
+* @param matrix: матрица
+* @param columns: размер строки
+* @param row1: строка для замены
+* @param row2: строка замены
 * @return: результат поиска
 */
-float** element_change(float** matrix, int  rows_1, int cols_1, int rows_2, int cols_2){
-    
-    float* temp; *temp = 0.0;
+void row_change(float** matrix, int columns, int row1, int row2) {
+    float temp;
 
-    // переставляем переменные
-    *temp = matrix[rows_1][cols_1];
-    matrix[rows_1][cols_1] = matrix[rows_2][cols_2];
-    matrix[rows_2][cols_2] = *temp;
-
-    free(temp); temp = NULL;
-
-    return matrix;
+    for (int i = 0; i < columns; i++) {
+        temp = matrix[row1][i];
+        matrix[row1][i] = matrix[row2][i];
+        matrix[row2][i] = temp;
     }
+}
+
+/**
+* @brief функция перестановки столбцов
+* @param matrix: матрица
+* @param rows: размер столбца
+* @param col1: столбец для замены
+* @param col2: столбец замены
+* @return: результат поиска
+*/
+void cols_change(float** matrix, int rows, int col1, int col2) {
+    float temp;
+// матрица передаётся по ссылке, поэтому при изменении формальных параметров
+// изменяются и фактические
+    for (int i = 0; i < rows; i++) {
+        temp = matrix[i][col1];
+        matrix[i][col1] = matrix[i][col2];
+        matrix[i][col2] = temp;
+    }
+}
 
 /**
 * @brief функция очистки памяти, занятой динамической матрицей

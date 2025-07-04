@@ -95,20 +95,19 @@ Node* create_random_list(size_t n){
     // инициализация списка со случайным значением
     Node *first = create_node(rand() % 100);
     Node *last = first;
-    n--;
+     n--;
 
     // пока не дойдём до конца списка - заполняем его значениями
     while(n != 0){
     
-    Node *new_node = create_node(rand() % 100);
-    new_node -> prev = last;
-    last -> next = new_node;
+        Node *new_node = create_node(rand() % 100);
+        new_node -> prev = last;
+        last -> next = new_node;
     
-    last = new_node;
+     last = new_node;
 
     // уменьшаем счётчик
-    n--;}
-
+         n--;}
     return first;
 }
 
@@ -120,16 +119,13 @@ Node* create_random_list(size_t n){
 void list_factor_plus(Node *head, int n){
 
     Node *cur = head;
+    int factorial = 1;
 
     for (int i = 1; i <= n; i++){
-        int factorial = 1;
-        
-        // в цикле высчитываем факториал 
-        for (int j = 1; j <= i; j++){   
-            factorial *= j; 
+        factorial *= i;
 
         // записываем изменённое значение
-        } cur -> data += factorial; 
+         cur -> data += factorial; 
         cur = cur -> next; }
 }
 

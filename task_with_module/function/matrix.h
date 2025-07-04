@@ -68,15 +68,24 @@ float** matr_multiply(float **matr_1, float **matr_2, size_t rows);
 struct RowsCols min_matrix_RC(float** matrix, int  rows, int cols);
 
 /**
-* @brief функция перестановки значений
-* @param matrix: матрица со значениями
-* @param rows_1: строка с ячейкой для замены
-* @param rows_1: строка куда заменить
-* @param cols_1: столбец с ячейкой для замены
-* @param cols_2: столбец куда заменить
+* @brief функция перестановки строк
+* @param matrix: матрица
+* @param columns: размер строки
+* @param row1: строка для замены
+* @param row2: строка замены
 * @return: результат поиска
 */
-float** element_change(float** matrix, int  rows_1, int cols_1, int rows_2, int cols_2);
+void row_change(float** matrix, int columns, int row1, int row2);
+
+/**
+* @brief функция перестановки строк
+* @param matrix: матрица
+* @param rows: размер строки
+* @param col1: строка для замены
+* @param col2: строка замены
+* @return: результат поиска
+*/
+void cols_change(float** matrix, int rows, int col1, int col2);
 
 /**
 * @brief функция очистки памяти, занятой динамической матрицей
