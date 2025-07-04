@@ -12,7 +12,7 @@ typedef struct student student;
 
 /**
  * @brief функция для заполнения переменной
- * @param: файл для открытия
+ * @param open_file: файл для открытия
  * @param file_name: имя файла
  * @return заполненная переменная
  */
