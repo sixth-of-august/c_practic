@@ -45,7 +45,7 @@ head = NULL;
 }
 /*
 создаём исполняемый файл, связаный с модулем
-gcc list.c  list_task_137_e.c -o list_task
+gcc list.c list_task_137_e.c -o list_task
 
 запускаем исполняемый файл
 ./list_task
